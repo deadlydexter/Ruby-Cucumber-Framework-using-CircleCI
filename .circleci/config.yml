@@ -10,5 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run File
+          name: Bundle install
+          command: bundle install
+      - run:
+          name: Run Feature
           command: bundle exec cucumber features/test.feature

@@ -11,6 +11,4 @@ jobs:
       - checkout
       - run:
           name: Run File
-          command: ruby test.rb
-
-
+          command: bundle exec cucumber features/test.feature

@@ -1,5 +1,5 @@
 Feature: Using the Cheese Machine
-
+  @CheeseMachine
   Scenario: Using the cheese machine
     When I click the first View Details button
     And I click the Adopt Me button

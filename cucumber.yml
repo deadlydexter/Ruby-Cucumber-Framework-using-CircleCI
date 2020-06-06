@@ -1,1 +1,1 @@
-default: --no-source
+default: --no-source --color --format pretty --tags @CheeseMachine

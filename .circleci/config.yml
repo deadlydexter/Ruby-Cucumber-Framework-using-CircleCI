@@ -10,6 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: Run File
+          command: ruby test.rb
+      

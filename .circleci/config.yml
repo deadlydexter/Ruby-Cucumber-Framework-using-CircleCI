@@ -14,4 +14,4 @@ jobs:
           command: bundle install
       - run:
           name: Run Feature
-          command: bundle exec cucumber features/test.feature
+          command: bundle exec cucumber features/CheeseMachineFeature.feature

@@ -9,11 +9,11 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-      - run:
-          name: Run File
-          command: ruby test.rb
+#      - run:
+#          name: Run File
+#          command: ruby test.rb
       - run:
           name: Which bundler?
           command: bundle -v
             - ruby/bundle-install
-            - cucumber "/features/test.feature" --format Teamcity::Cucumber::Formatter --expand --name "^Using the cheese machine$" --color -r features
+

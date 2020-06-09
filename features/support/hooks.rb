@@ -2,7 +2,7 @@
 
 Before('@AdoptingAPuppy') do |scenario|
   log("Initializing Chrome Browser: ")
-  Selenium::WebDriver::Chrome::Service.driver_path = "features/support/driver/chromedriver.exe"
+  #Selenium::WebDriver::Chrome::Service.driver_path = "features/support/driver/chromedriver.exe"
   @browser = Watir::Browser.new :chrome
   @browser.window.maximize
 end

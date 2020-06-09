@@ -1,1 +1,1 @@
-default: --no-source --color --format pretty --tags @CheeseMachine
+default: --no-source --color --format pretty --tags '@AdoptingAPuppy or @CheeseMachine'

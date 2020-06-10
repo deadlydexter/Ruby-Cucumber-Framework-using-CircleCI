@@ -2,8 +2,12 @@
 
 Before('@AdoptingAPuppy') do |scenario|
   log("Initializing Chrome Browser: ")
-  #Selenium::WebDriver::Chrome::Service.driver_path = "features/support/driver/chromedriver.exe"
-  @browser = Watir::Browser.new :chrome, options: {args: "--disable-dev-shm-usage"}
+  options = ::Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-dev-shm-usage')
+  options.add_argument('--window-size=1600,1200')
+  options.add_argument('--ignore-certificate-errors')
+  @browser = Watir::Browser.new :chrome, options: options
   @browser.window.maximize
 end
 

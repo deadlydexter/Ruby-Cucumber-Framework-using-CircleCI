@@ -6,7 +6,7 @@ When(/^I click the first View Details button$/) do
 
 end
 And(/^I click the Adopt button$/) do
-  pending
+  log "I click the Adopt button"
 end
 
 

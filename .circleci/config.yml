@@ -8,8 +8,6 @@ jobs:
       - image: circleci/ruby:2.6.3-stretch-node
     executor: ruby/default
     steps:
-      - wget https://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip
-      - unzip chromedriver_linux64.zip
       - checkout
       - run:
           name: Bundle install

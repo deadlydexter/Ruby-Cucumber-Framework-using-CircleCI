@@ -2,7 +2,6 @@
 
 Before('@AdoptingAPuppy') do |scenario|
   log("Initializing Chrome Browser: ")
-  Selenium::WebDriver::Chrome::Service.driver_path = "features/support/driver/chromedriver.exe"
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--no-sandbox')
   options.add_argument('--disable-dev-shm-usage')

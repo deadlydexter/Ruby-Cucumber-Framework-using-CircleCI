@@ -8,8 +8,8 @@ jobs:
       - image: circleci/ruby:2.6.3-stretch-node
     executor: ruby/default
     steps:
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
+      - wget https://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip
+      - unzip chromedriver_linux64.zip
       - checkout
       - run:
           name: Bundle install
@@ -18,11 +18,3 @@ jobs:
           name: Run Feature
 #          command: bundle exec cucumber features/CheeseMachineFeature.feature
           command: rake default
-dependencies:
-  post:
-    # install chromedriver
-    - wget https://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip
-    - unzip chromedriver_linux64.zip
-    # run chromedriver
-    - ./chromedriver --url-base=wd/hub --port=9515  --verbose --log-path=$CIRCLE_ARTIFACTS/chromedriver.log:
-        background: true

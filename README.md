@@ -44,3 +44,11 @@ Now this Rake Task will run all the scenarios which has the tag ```@Tag_name```
 - Select a config template from the dropdown ```Ruby``` in this case
 - Then click on ```Start Building``` to add config to a new branch and start the pipeline. 
 - Finally click on ```Add Config``` to be taken to the ```Pipelines Page``` where you can check the status of your application after each deployment.
+
+## Pull request and CircleCI:
+- Create a new Branch ```git checkout -b branch_one```
+-   Make changes
+-   Add files ```git add .``` commit changes ```git commit – m “Commit Message”``` and 
+-   Push to repo ```git push -u origin branch_one```   
+-   Create ```pull request``` in GitHub ```branch_one``` to ```master```.
+-	Check CircleCI status, once passed merge pull request.

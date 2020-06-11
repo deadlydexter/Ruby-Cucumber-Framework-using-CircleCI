@@ -12,7 +12,7 @@ Before('@AdoptingOnePuppy or @AdoptingTwoPuppy or @ValidateCartItems') do |scena
   file_log.level = Logger::INFO
 
   @log = MultiLogger.new(console_log, file_log)
-  @log.info "-------------------Logger END--------------------------"
+  @log.info "-------------------Logger START--------------------------"
   @log.info("Initializing Chrome Browser: ")
 
   # Initialize browser Instance:

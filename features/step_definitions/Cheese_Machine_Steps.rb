@@ -2,7 +2,7 @@ require 'rubygems'
 require "watir"
 
 When(/^I click the first View Details button$/) do
-  log "When I click the first View Details button"
+  @browser.button(:value => 'View Details', :index => 0).click
 
 end
 And(/^I click the Adopt button$/) do
@@ -10,21 +10,19 @@ And(/^I click the Adopt button$/) do
 end
 
 
-
 Then(/^Then I should see Brook as the name for line item 1$/) do
   log "Then I should see Brook as the name for line item 1"
 end
 
 Given(/^I am on the puppy adoption site$/) do
-  #@browser = Watir::Browser.new :chrome
+  @log.debug "Navigating to url"
+
   @browser.goto 'http://puppies.herokuapp.com'
 end
 
-When(/^I click the View Details button$/) do
-  @browser.button(:value => 'View Details', :index => 0).click
-end
 
 And(/^I click the Adopt Me button$/) do
+  @log.debug "Clicked on Adopt Me button"
   @browser.button(:value => 'Adopt Me!').click
 end
 
@@ -33,7 +31,7 @@ And(/^I click the Complete the Adoption button$/) do
 end
 
 And(/^I enter "([^"]*)" in the name field$/) do |arg|
-  @browser.text_field(:id => 'order_name').send_keys(arg,:tab)
+  @browser.text_field(:id => 'order_name').send_keys(arg, :tab)
 end
 
 And(/^I enter "([^"]*)" in the address field$/) do |arg|
@@ -56,3 +54,24 @@ Then(/^I should see "([^"]*)"$/) do |arg|
   fail unless @browser.text.include? arg
 end
 
+
+And(/^I click the Adopt Another Puppy button$/) do
+  @browser.button(:value => 'Adopt Another Puppy').click
+end
+
+And(/^I click the second View Details button$/) do
+  @browser.button(:value => 'View Details', :index => 1).click
+end
+
+Then /^I should see "([^"]*)" as the name for line item (\d+)$/ do |name, line_item|
+  row = (line_item.to_i - 1) * 6
+  expect(@browser.table(:index => 0)[row][1].text).to include name
+end
+When /^I should see "([^"]*)" as the subtotal for line item (\d+)$/ do |subtotal, line_item|
+  row = (line_item.to_i - 1) * 6
+  expect(@browser.table(:index => 0)[row][3].text).to eql subtotal
+end
+
+When /^I should see "([^"]*)" as the cart total$/ do |total|
+  expect(@browser.td(:class => 'total_cell').text).to eql total
+end

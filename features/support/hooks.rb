@@ -1,5 +1,5 @@
 require 'logger'
-require_relative  'MultiLogger'
+require_relative 'MultiLogger'
 
 Before('@AdoptingOnePuppy or @AdoptingTwoPuppy or @ValidateCartItems') do |scenario|
 

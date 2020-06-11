@@ -1,1 +1,2 @@
-default: --no-source --color --format pretty --tags '@AdoptingAPuppy'
+default: --no-source --color --format pretty --tags '@CheeseMachine'
+ui_tests: --no-source --color --format pretty --tags '@AdoptingOnePuppy or @AdoptingTwoPuppy or @ValidateCartItems'

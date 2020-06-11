@@ -2,12 +2,17 @@ Feature: Using the Cheese Machine
 
   @CheeseMachine
   Scenario: Using the cheese machine
-    When I click the first View Details button
-    And I click the Adopt button
-    Then Then I should see Brook as the name for line item 1
+  Given I have no cheese
+  When I press the make cheese button
+  Then I should have 1 piece of cheese
 
-  @AdoptingAPuppy
+  @AdoptingOnePuppy
   Scenario: scenario: Adopting one puppy
+
+  As a puppy lover
+  I want to adopt puppies
+  So they can chew my furniture
+
     Given I am on the puppy adoption site
     When I click the first View Details button
     And I click the Adopt Me button
@@ -19,8 +24,13 @@ Feature: Using the Cheese Machine
     And I click the Place Order button
     Then I should see "Thank you for adopting a puppy!"
 
-  @AdoptingAPuppy
+  @AdoptingTwoPuppy
   Scenario: Adopting two puppies
+
+  As a puppy lover
+  I want to adopt two puppies
+  So they can chew my furniture
+
   Given I am on the puppy adoption site
   When I click the first View Details button
   And I click the Adopt Me button
@@ -35,8 +45,12 @@ Feature: Using the Cheese Machine
   And I click the Place Order button
   Then I should see "Thank you for adopting a puppy!"
 
-  @AdoptingAPuppy
+  @ValidateCartItems
   Scenario: Validate cart with one puppy
+
+    Once Items are added to cart
+    I want to validate elements on the cart
+
   Given I am on the puppy adoption site
   When I click the first View Details button
   And I click the Adopt Me button

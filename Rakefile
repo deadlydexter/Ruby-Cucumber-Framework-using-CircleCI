@@ -7,3 +7,9 @@ Cucumber::Rake::Task.new(:features) do |t|
 end
 
 task :default => :features
+
+Cucumber::Rake::Task.new(:ui_features) do |t|
+  t.profile = 'ui_tests'
+end
+
+task :ui_tests => :ui_features

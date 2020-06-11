@@ -1,5 +1,0 @@
-# Logfile created on 2020-06-10 21:45:17 -0400 by logger.rb/66358
-I, [2020-06-10T21:47:03.221618 #10620]  INFO -- : Initializing Chrome Browser: 
-D, [2020-06-10T21:47:04.778403 #10620] DEBUG -- : Navigating to url
-D, [2020-06-10T21:47:06.408533 #10620] DEBUG -- : Clicked on Adopt Me button
-I, [2020-06-10T21:47:07.050830 #10620]  INFO -- : Closing Chrome Browser Instance

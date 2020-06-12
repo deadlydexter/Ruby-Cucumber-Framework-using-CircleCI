@@ -87,3 +87,17 @@ end
 When /^I should see "([^"]*)" as the cart total$/ do |total|
   expect(@browser.td(:class => 'total_cell').text).to eql total
 end
+
+
+Given(/^I have no Cheese$/) do
+  log("I am so sad. I have no cheese :(")
+end
+
+When(/^I press the make "([^"]*)" cheese button$/) do |type|
+  log("I press the make #{type} cheese button")
+end
+
+Then(/^I should see the "([^"]*)" message$/) do |msg|
+  #{num_pieces} pieces of cheese.
+  log("Rejoice!:  #{msg}")
+end

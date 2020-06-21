@@ -1,6 +1,6 @@
 require 'logger'
 
-Before('@AdoptingOnePuppy or @AdoptingTwoPuppy or @ValidateCartItems') do |scenario|
+Before do
 
   # Initialize Logger
 
@@ -28,7 +28,7 @@ Before('@AdoptingOnePuppy or @AdoptingTwoPuppy or @ValidateCartItems') do |scena
 end
 
 
-After('@AdoptingOnePuppy or @AdoptingTwoPuppy or @ValidateCartItems') do
+After do
   @log.info("Closing Chrome Browser Instance")
   @browser.close
   @log.info "-------------------Logger END--------------------------"

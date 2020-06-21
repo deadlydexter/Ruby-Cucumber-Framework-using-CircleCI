@@ -14,7 +14,9 @@
     + ```testgen project {project_name}```
 - Once the command is successfully executed we will be able to see the project files created in our directory
 - Now ```cd..``` into the project folder and run ```bundle install``` 
-           
+- Make sure to install the gems with the following versions if you run into ```No Tests were found``` error in your IDE
+    + ```gem 'watir', '~> 6.9.1'```
+    + ```gem 'cucumber', '~> 2.99.0'```       
 ## Coding
 - Start creating Scenario with the ```Feature``` and ```step_definitions``` files in respective folders and
 - Downloading required gems by listing them in ```Gemfile.rb``` or ```gem install {gem_name}``` individually.

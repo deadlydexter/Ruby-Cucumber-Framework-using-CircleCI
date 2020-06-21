@@ -1,17 +1,6 @@
 require 'rubygems'
 require "watir"
 
-Given /^I have no cheese$/ do
-  log("I am so sad. I have no cheese :(")
-end
-
-When /^I press the make cheese button$/ do
-  log("There is hope. I hope this machine works")
-end
-
-Then /^I should have (\d+) piece of cheese$/ do |num_pieces|
-  log("Rejoice! We have #{num_pieces} pieces of cheese.")
-end
 
 When(/^I click the first View Details button$/) do
   @browser.button(:value => 'View Details', :index => 0).click
@@ -28,13 +17,14 @@ end
 
 Given(/^I am on the puppy adoption site$/) do
   @log.info "Navigating to url"
-
+  # @browser = Watir::Browser.new :chrome
+  # @browser.window.maximize
   @browser.goto 'http://puppies.herokuapp.com'
 end
 
 
 And(/^I click the Adopt Me button$/) do
-  @log.info "Clicked on Adopt Me button"
+  # @log.info "Clicked on Adopt Me button"
   @browser.button(:value => 'Adopt Me!').click
 end
 
@@ -86,18 +76,4 @@ end
 
 When /^I should see "([^"]*)" as the cart total$/ do |total|
   expect(@browser.td(:class => 'total_cell').text).to eql total
-end
-
-
-Given(/^I have no Cheese$/) do
-  log("I am so sad. I have no cheese :(")
-end
-
-When(/^I press the make "([^"]*)" cheese button$/) do |type|
-  log("I press the make #{type} cheese button")
-end
-
-Then(/^I should see the "([^"]*)" message$/) do |msg|
-  #{num_pieces} pieces of cheese.
-  log("Rejoice!:  #{msg}")
 end

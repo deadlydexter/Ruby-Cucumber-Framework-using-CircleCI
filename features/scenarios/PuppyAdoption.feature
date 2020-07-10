@@ -2,13 +2,18 @@ Feature: Using the Puppy Adoption Feature
 
   @AdoptingOnePuppy
   Scenario: Adopting one puppy
+
+  As a puppy lover
+  I want to adopt one puppy
+  So puppy can chew my furniture
+
     Given I am on the puppy adoption site
     When I click the first View Details button
     And I click the Adopt Me button
     And I click the Complete the Adoption button
     And I enter "Samy" in the name field
     And I enter "123 Main Street" in the address field
-    And I enter "cheezy@example.com" in the email field
+    And I enter "samy@example.com" in the email field
     And I select "Credit card" from the pay with dropdown
     And I click the Place Order button
     Then I should see "Thank you for adopting a puppy!"
@@ -18,7 +23,7 @@ Feature: Using the Puppy Adoption Feature
 
   As a puppy lover
   I want to adopt two puppies
-  So they can chew my furniture
+  So they can chew all my furniture
 
     Given I am on the puppy adoption site
     When I click the first View Details button
@@ -29,7 +34,7 @@ Feature: Using the Puppy Adoption Feature
     And I click the Complete the Adoption button
     And I enter "Samy" in the name field
     And I enter "123 Main Street" in the address field
-    And I enter "cheezy@example.com" in the email field
+    And I enter "samy@example.com" in the email field
     And I select "Credit card" from the pay with dropdown
     And I click the Place Order button
     Then I should see "Thank you for adopting a puppy!"
@@ -49,7 +54,12 @@ Feature: Using the Puppy Adoption Feature
 
 
   @AdoptingPuppyWithDiffPayments
-  Scenario Outline: Adopting two puppies using outline
+  Scenario Outline: Adopting two puppies using different payment options
+
+  As a User
+  I want to adopt puppies
+  and complete checkout using different payment options
+
     Given I am on the puppy adoption site
     When I click the first View Details button
     And I click the Adopt Me button
@@ -64,7 +74,7 @@ Feature: Using the Puppy Adoption Feature
     And I click the Place Order button
     Then I should see "Thank you for adopting a puppy!"
     Examples:
-      | name   | address      | email              | pay_type       |
-      | Samy   | 123 Main St  | cheezy@example.com | Credit card    |
-      | Dexter | 555 South St | joe@guru.com       | Check          |
-      | John   | 234 Leandog  | doc@dev.com        | Purchase order |
+      | name   | address      | email             | pay_type       |
+      | Samy   | 123 Main St  | samy@example.com  | Credit card    |
+      | Dexter | 555 South St | dex@mail.com      | Check          |
+      | John   | 234 Leandog  | john@somemail.com | Purchase order |

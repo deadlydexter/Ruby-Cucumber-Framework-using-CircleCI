@@ -17,8 +17,6 @@ end
 
 Given(/^I am on the puppy adoption site$/) do
   @log.info "Navigating to url"
-  # @browser = Watir::Browser.new :chrome
-  # @browser.window.maximize
   @browser.goto 'http://puppies.herokuapp.com'
 end
 

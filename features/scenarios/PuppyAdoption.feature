@@ -18,6 +18,8 @@ Feature: Using the Puppy Adoption Feature
     And I click the Place Order button
     Then I should see "Thank you for adopting a puppy!"
 
+
+
   @AdoptingTwoPuppy
   Scenario: Adopting two puppies
 

@@ -15,4 +15,4 @@ jobs:
       - run:
           name: Run Feature
 #          command: bundle exec cucumber features/CheeseMachineFeature.feature
-          command: rake default
+          command: rake test

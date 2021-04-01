@@ -1,3 +1,4 @@
 ui_tests: --no-source --color --format pretty --tags @AdoptingOnePuppy --format html --out cucumberReport.html
+ui_tests_1: --no-source --color --format pretty --tags @AdoptingOnePuppy --format html --out cucumberReport.html
 
 #  ,@ValidateCartItems,@AdoptingTwoPuppy,@AdoptingPuppyWithDiffPayments

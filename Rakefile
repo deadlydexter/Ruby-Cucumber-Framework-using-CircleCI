@@ -15,5 +15,4 @@ end
 task :test do
   ruby "test.rb"
 end
-
 task :ui_tests => :ui_features

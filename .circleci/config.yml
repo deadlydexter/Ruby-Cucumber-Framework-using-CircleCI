@@ -9,9 +9,9 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-#      - run:
-#            name: Bundle Update
-#            command: bundle update --bundler
+      - run:
+            name: Set Permission
+            command: chmod -R 777 /webdrivers
       - run:
           name: Bundle install
           command: bundle install

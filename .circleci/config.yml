@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
+            name: Bundle Update
+            command: bundle update --bundler
+      - run:
           name: Bundle install
           command: bundle install
       - run:

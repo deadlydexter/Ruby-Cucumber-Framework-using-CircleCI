@@ -10,9 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-            name: Set Permission
-            command: chmod -R 777 /webdrivers
-      - run:
           name: Bundle install
           command: bundle install
       - run:

@@ -8,4 +8,3 @@ gem 'data_magic'
 gem 'ffi'
 gem 'watir', '~> 6.9.1'
 gem 'multi_json'
-# gem "test-unit"

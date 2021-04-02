@@ -32,7 +32,10 @@ jobs:
             echo "# Copy artifacts to shared folder:"
             cp -R output/. /tmp/tests/shared_folder
             ls /tmp/tests/shared_folder
-
+      - persist_to_workspace:
+          root: /tmp/tests
+          paths:
+            - shared_folder
       - store_artifacts:
           path: output
       - store_test_results:

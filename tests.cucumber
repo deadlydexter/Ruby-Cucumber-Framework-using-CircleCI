@@ -1,0 +1,170 @@
+[
+  {
+    "uri": "features/scenarios/PuppyAdoption.feature",
+    "id": "using-the-puppy-adoption-feature",
+    "keyword": "Feature",
+    "name": "Using the Puppy Adoption Feature",
+    "description": "",
+    "line": 1,
+    "elements": [
+      {
+        "id": "using-the-puppy-adoption-feature;adopting-one-puppy",
+        "keyword": "Scenario",
+        "name": "Adopting one puppy",
+        "description": "  As a puppy lover\n  I want to adopt one puppy\n  So puppy can chew my furniture",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@AdoptingOnePuppy",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1595921200
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the puppy adoption site",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1060468200
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the first View Details button",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 274856400
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the Adopt Me button",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 435134000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the Complete the Adoption button",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 266112700
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"Samy\" in the name field",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 220817500
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"123 Main Street\" in the address field",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 125969600
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"samy@example.com\" in the email field",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 243619500
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select \"Credit card\" from the pay with dropdown",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 367420400
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the Place Order button",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 401734300
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see \"Thank you for adopting a puppy!\"",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/Puppy_Adoption_Steps.rb:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 46728800
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93956000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

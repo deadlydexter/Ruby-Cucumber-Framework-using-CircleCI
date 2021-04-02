@@ -15,4 +15,10 @@ jobs:
       - run:
           name: Run Feature
 #          command: bundle exec cucumber features/CheeseMachineFeature.feature
-          command: rake ui_tests
+          command: |
+          rake ui_tests
+          mkdir output
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output

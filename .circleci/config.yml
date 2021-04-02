@@ -24,7 +24,7 @@ jobs:
             rake ui_tests
             dir
       - run:
-          name: copy marker files (launch id, stats) to shared folder
+          name: copy output artifacts to shared folder
           command: |
             echo "### Original files in OUTPUT folder"
             ls output/
@@ -32,10 +32,10 @@ jobs:
             echo "### Copy artifacts to shared folder:"
             cp -R output/. /tmp/tests/shared_folder
             ls /tmp/tests/shared_folder
-      - persist_to_workspace:
-          root: /tmp/tests
-          paths:
-            - shared_folder
+#      - persist_to_workspace:
+#          root: /tmp/tests
+#          paths:
+#            - shared_folder
       - store_artifacts:
           path: output
       - store_test_results:

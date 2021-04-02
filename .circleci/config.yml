@@ -4,6 +4,7 @@ orbs:
   browser-tools: circleci/browser-tools@0.1.4
 jobs:
   build:
+    working_directory: /tmp/tests
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
     executor: ruby/default
@@ -18,7 +19,10 @@ jobs:
           command: |
             rake ui_tests
             mkdir output
+            dir
+      - persist_to_workspace:
+          root: /tmp/tests
       - store_artifacts:
           path: output
       - store_test_results:
-          path: output
+          path: /tmp/test-results

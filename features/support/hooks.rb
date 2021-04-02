@@ -30,6 +30,10 @@ end
 
 After do
   @log.info("Closing Chrome Browser Instance")
-  @browser.close
+
+  if @browser!=nil
+    @browser.close
+  end
+
   @log.info "-------------------Logger END--------------------------"
 end

@@ -1,8 +1,0 @@
-I, [2021-01-08T00:01:25.197152 #19820]  INFO -- : -------------------Logger START--------------------------
-I, [2021-01-08T00:01:25.197751 #19820]  INFO -- : Initializing Chrome Browser: 
-I, [2021-01-08T00:01:27.043883 #19820]  INFO -- : Closing Chrome Browser Instance
-I, [2021-01-08T00:04:22.355672 #5904]  INFO -- : -------------------Logger START--------------------------
-I, [2021-01-08T00:04:22.355949 #5904]  INFO -- : Initializing Chrome Browser: 
-I, [2021-01-08T00:04:24.034098 #5904]  INFO -- : Navigating to url
-I, [2021-01-08T00:05:01.004053 #5904]  INFO -- : Closing Chrome Browser Instance
-I, [2021-01-08T00:05:01.126030 #5904]  INFO -- : -------------------Logger END--------------------------

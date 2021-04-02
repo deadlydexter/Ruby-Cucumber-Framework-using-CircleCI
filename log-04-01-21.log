@@ -1,9 +1,0 @@
-I, [2021-04-01T16:06:11.024553 #15088]  INFO -- : -------------------Logger START--------------------------
-I, [2021-04-01T16:06:11.024804 #15088]  INFO -- : Initializing Chrome Browser: 
-I, [2021-04-01T16:06:11.209487 #15088]  INFO -- : Closing Chrome Browser Instance
-I, [2021-04-01T16:07:41.061588 #2628]  INFO -- : -------------------Logger START--------------------------
-I, [2021-04-01T16:07:41.062205 #2628]  INFO -- : Initializing Chrome Browser: 
-I, [2021-04-01T16:07:41.208309 #2628]  INFO -- : Closing Chrome Browser Instance
-I, [2021-04-01T22:30:13.081354 #6976]  INFO -- : -------------------Logger START--------------------------
-I, [2021-04-01T22:30:13.081831 #6976]  INFO -- : Initializing Chrome Browser: 
-I, [2021-04-01T22:30:13.238750 #6976]  INFO -- : Closing Chrome Browser Instance

@@ -26,16 +26,13 @@ jobs:
       - run:
           name: copy output artifacts to shared folder
           command: |
-            echo "### Original files in OUTPUT folder"
+            echo "# Original files in OUTPUT folder"
             ls output/
 
-            echo "### Copy artifacts to shared folder:"
+            echo "# Copy artifacts to shared folder:"
             cp -R output/. /tmp/tests/shared_folder
             ls /tmp/tests/shared_folder
-#      - persist_to_workspace:
-#          root: /tmp/tests
-#          paths:
-#            - shared_folder
+
       - store_artifacts:
           path: output
       - store_test_results:

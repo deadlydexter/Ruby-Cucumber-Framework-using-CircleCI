@@ -57,3 +57,18 @@ I, [2021-04-02T12:42:08.418390 #12764]  INFO -- : Initializing Chrome Browser:
 I, [2021-04-02T12:42:09.896630 #12764]  INFO -- : Navigating to url
 I, [2021-04-02T12:42:18.181581 #12764]  INFO -- : Closing Chrome Browser Instance
 I, [2021-04-02T12:42:18.305776 #12764]  INFO -- : -------------------Logger END--------------------------
+I, [2021-04-02T12:44:51.980125 #14456]  INFO -- : -------------------Logger START--------------------------
+I, [2021-04-02T12:44:51.980338 #14456]  INFO -- : Initializing Chrome Browser: 
+I, [2021-04-02T12:44:53.518043 #14456]  INFO -- : Navigating to url
+I, [2021-04-02T12:45:02.150716 #14456]  INFO -- : Closing Chrome Browser Instance
+I, [2021-04-02T12:45:02.285011 #14456]  INFO -- : -------------------Logger END--------------------------
+I, [2021-04-02T12:45:27.276199 #14116]  INFO -- : -------------------Logger START--------------------------
+I, [2021-04-02T12:45:27.276372 #14116]  INFO -- : Initializing Chrome Browser: 
+I, [2021-04-02T12:45:28.883007 #14116]  INFO -- : Navigating to url
+I, [2021-04-02T12:45:32.214094 #14116]  INFO -- : Closing Chrome Browser Instance
+I, [2021-04-02T12:45:32.315415 #14116]  INFO -- : -------------------Logger END--------------------------
+I, [2021-04-02T12:45:55.355944 #2184]  INFO -- : -------------------Logger START--------------------------
+I, [2021-04-02T12:45:55.356222 #2184]  INFO -- : Initializing Chrome Browser: 
+I, [2021-04-02T12:45:56.899586 #2184]  INFO -- : Navigating to url
+I, [2021-04-02T12:46:00.047478 #2184]  INFO -- : Closing Chrome Browser Instance
+I, [2021-04-02T12:46:00.150398 #2184]  INFO -- : -------------------Logger END--------------------------

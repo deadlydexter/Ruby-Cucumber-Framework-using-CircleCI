@@ -20,8 +20,6 @@ jobs:
             rake ui_tests
             mkdir output
             dir
-      - persist_to_workspace:
-          root: /tmp/tests
       - store_artifacts:
           path: output
       - store_test_results:

@@ -106,6 +106,7 @@ Feature: Using the Puppy Adoption Feature
 
   @AdoptingPuppyWithPartialDefaultData @circleCI
   Scenario: Adopting a puppy using partial default data
+    Given I am on the puppy adoption site
     When I click the View Details button for "Brook"
     And I click the Adopt Me button
     And I click the Complete the Adoption button
@@ -114,6 +115,7 @@ Feature: Using the Puppy Adoption Feature
 
   @AdoptingPuppyWithOnlyDefaultData @circleCI
   Scenario: Adopting a puppy using all default data
+    Given I am on the puppy adoption site
     When I click the View Details button for "Brook"
     And I click the Adopt Me button
     And I click the Complete the Adoption button

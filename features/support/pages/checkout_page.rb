@@ -1,4 +1,5 @@
 require_relative 'error_panel'
+
 class CheckoutPage
 
   include PageObject
@@ -9,9 +10,9 @@ class CheckoutPage
   text_field(:email, :id => "order_email")
   select_list(:pay_type, :id => "order_pay_type")
   DEFAULT_DATA = {
-      'name' => 'cheezy',
+      'name' => 'Samy',
       'address' => '123 Main Street',
-      'email' => 'cheezy@example.com',
+      'email' => 'Samy@example.com',
       'pay_type' => 'Purchase order'
   }
 

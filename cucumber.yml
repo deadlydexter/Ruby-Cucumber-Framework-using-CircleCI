@@ -1,2 +1,2 @@
-ui_tests: --no-source --color --format pretty --tags @ErrorValidation --format html --out output/cucumberReport.html --format json --out output/tests.cucumber
+ui_tests: --no-source --color --format pretty --tags @circleCI --format html --out output/cucumberReport.html --format json --out output/tests.cucumber
 #  @AdoptingOnePuppy,@AdoptingTwoPuppy,@ValidateCartItems,@AdoptingPuppyWithDiffPayments

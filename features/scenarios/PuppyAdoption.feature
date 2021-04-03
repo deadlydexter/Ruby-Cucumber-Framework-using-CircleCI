@@ -88,8 +88,8 @@ Feature: Using the Puppy Adoption Feature
     And I click the Adopt Me button
     And I click the Complete the Adoption button
     And I complete the adoption with:
-      | name   | address         | email              | pay_type |
-      | Cheezy | 123 Main Street | cheezy@example.com | Check    |
+      | name | address         | email            | pay_type |
+      | Samy | 123 Main Street | samy@example.com | Check    |
     Then I should see "Thank you for adopting a puppy!"
 
 
@@ -100,8 +100,8 @@ Feature: Using the Puppy Adoption Feature
     And I click the Adopt Me button
     And I click the Complete the Adoption button
     And I complete the adoption with default data:
-      | name   | address         | email              | pay_type |
-      | Cheezy | 123 Main Street | cheezy@example.com | Check    |
+      | name | address         | email            | pay_type |
+      | Samy | 123 Main Street | samy@example.com | Check    |
     Then I should see "Thank you for adopting a puppy!"
 
   @AdoptingPuppyWithPartialDefaultData @circleCI
@@ -130,9 +130,9 @@ Feature: Using the Puppy Adoption Feature
 
   @circleCI @ErrorValidation
   Scenario: Name is a required field
-   Given I am on the puppy adoption site
-   When I checkout leaving the name field blank
-   Then I should see the error message "Name can't be blank"
+    Given I am on the puppy adoption site
+    When I checkout leaving the name field blank
+    Then I should see the error message "Name can't be blank"
 
   @PageObjectNavigateAllMethod @circleCI
   Scenario: Navigate using Navigate All Method

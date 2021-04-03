@@ -1,6 +1,6 @@
 Feature: Using the Puppy Adoption Feature
 
-  @AdoptingOnePuppy
+  @AdoptingOnePuppy @circleCI
   Scenario: Adopting one puppy
 
   As a puppy lover
@@ -19,8 +19,7 @@ Feature: Using the Puppy Adoption Feature
     Then I should see "Thank you for adopting a puppy!"
 
 
-
-  @AdoptingTwoPuppy
+  @AdoptingTwoPuppy @circleCI
   Scenario: Adopting two puppies
 
   As a puppy lover
@@ -41,7 +40,7 @@ Feature: Using the Puppy Adoption Feature
     And I click the Place Order button
     Then I should see "Thank you for adopting a puppy!"
 
-  @ValidateCartItems
+  @ValidateCartItems @circleCI
   Scenario: Validate cart with one puppy
 
   Once Items are added to cart
@@ -55,7 +54,7 @@ Feature: Using the Puppy Adoption Feature
     And I should see "$34.95" as the cart total
 
 
-  @AdoptingPuppyWithDiffPayments
+  @AdoptingPuppyWithDiffPayments @circleCI
   Scenario Outline: Adopting two puppies using different payment options
 
   As a User
@@ -80,3 +79,49 @@ Feature: Using the Puppy Adoption Feature
       | Samy   | 123 Main St  | samy@example.com  | Credit card    |
       | Dexter | 555 South St | dex@mail.com      | Check          |
       | John   | 234 Leandog  | john@somemail.com | Purchase order |
+
+
+  @AdoptingPuppyWithTable @circleCI
+  Scenario: Adopting a puppy using a table
+    Given I am on the puppy adoption site
+    When I click the View Details button for "Brook"
+    And I click the Adopt Me button
+    And I click the Complete the Adoption button
+    And I complete the adoption with:
+      | name   | address         | email              | pay_type |
+      | Cheezy | 123 Main Street | cheezy@example.com | Check    |
+    Then I should see "Thank you for adopting a puppy!"
+
+
+  @AdoptingPuppyWithTableDefaultData @circleCI
+  Scenario: Adopting a puppy using a table and Defaultdata
+    Given I am on the puppy adoption site
+    When I click the View Details button for "Brook"
+    And I click the Adopt Me button
+    And I click the Complete the Adoption button
+    And I complete the adoption with default data:
+      | name   | address         | email              | pay_type |
+      | Cheezy | 123 Main Street | cheezy@example.com | Check    |
+    Then I should see "Thank you for adopting a puppy!"
+
+  @AdoptingPuppyWithPartialDefaultData @circleCI
+  Scenario: Adopting a puppy using partial default data
+    When I click the View Details button for "Brook"
+    And I click the Adopt Me button
+    And I click the Complete the Adoption button
+    And I complete the adoption using a Credit card
+    Then I should see "Thank you for adopting a puppy!"
+
+  @AdoptingPuppyWithOnlyDefaultData @circleCI
+  Scenario: Adopting a puppy using all default data
+    When I click the View Details button for "Brook"
+    And I click the Adopt Me button
+    And I click the Complete the Adoption button
+    And I complete the adoption
+    Then I should see "Thank you for adopting a puppy!"
+
+  @ValidateTheWhatNotHow @circleCI
+  Scenario: Thank you message should be displayed
+    Given I am on the puppy adoption site
+    When I complete the adoption of a puppy
+    Then I should see "Thank you for adopting a puppy!"

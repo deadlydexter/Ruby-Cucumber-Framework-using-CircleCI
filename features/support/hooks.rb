@@ -28,9 +28,14 @@ Before do
 end
 
 
-After do
+After do |scenario|
   @log.info("Closing Chrome Browser Instance")
-
+  if scenario.failed?
+     time = Time.now.strftime("%Y-%m-%d_%H-%M-%S")
+     filename = "error-#{@current_page.class}-#{time}.png"
+     @current_page.save_screenshot(filename)
+     embed(filename, 'image/png')
+     end
   if @browser!=nil
     @browser.close
   end

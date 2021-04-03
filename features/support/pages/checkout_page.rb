@@ -1,6 +1,8 @@
+require_relative 'error_panel'
 class CheckoutPage
 
   include PageObject
+  include ErrorPanel
 
   text_field(:name, :id => "order_name")
   textarea(:address, :id => "order_address")

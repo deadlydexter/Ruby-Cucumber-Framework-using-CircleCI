@@ -127,3 +127,15 @@ Feature: Using the Puppy Adoption Feature
     Given I am on the puppy adoption site
     When I complete the adoption of a puppy
     Then I should see "Thank you for adopting a puppy!"
+
+  @circleCI @ErrorValidation
+  Scenario: Name is a required field
+   Given I am on the puppy adoption site
+   When I checkout leaving the name field blank
+   Then I should see the error message "Name can't be blank"
+
+  @PageObjectNavigateAllMethod @circleCI
+  Scenario: Navigate using Navigate All Method
+    Given I am on the puppy adoption site
+    When I complete the adoption of a puppy with navigate_all
+    Then I should see "Thank you for adopting a puppy!"

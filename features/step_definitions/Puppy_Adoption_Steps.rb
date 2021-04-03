@@ -1,77 +1,57 @@
-require 'rubygems'
-require "watir"
 
-
-When(/^I click the first View Details button$/) do
-  @browser.button(:value => 'View Details', :index => 0).click
-
-end
-And(/^I click the Adopt button$/) do
-  log "I click the Adopt button"
+Given /^I am on the puppy adoption site$/ do
+  visit(HomePage)
 end
 
-
-Then(/^Then I should see Brook as the name for line item 1$/) do
-  log "Then I should see Brook as the name for line item 1"
+When /^I click the View Details button for "([^"]*)"$/ do |name|
+  on(HomePage).select_puppy name
 end
 
-Given(/^I am on the puppy adoption site$/) do
-  @log.info "Navigating to url"
-  @browser.goto 'http://puppies.herokuapp.com'
+When /^I click the Adopt Me button$/ do
+  on(DetailsPage).add_to_cart
 end
 
-
-And(/^I click the Adopt Me button$/) do
-  # @log.info "Clicked on Adopt Me button"
-  @browser.button(:value => 'Adopt Me!').click
+When /^I click the Complete the Adoption button$/ do
+  on(ShoppingCartPage).proceed_to_checkout
 end
 
-And(/^I click the Complete the Adoption button$/) do
-  @browser.button(:value => 'Complete the Adoption').click
+When /^I click the Adopt Another Puppy button$/ do
+  on(ShoppingCartPage).continue_shopping
 end
 
-And(/^I enter "([^"]*)" in the name field$/) do |arg|
-  @browser.text_field(:id => 'order_name').send_keys(arg, :tab)
+When /^I enter "([^"]*)" in the name field$/ do |name|
+  on(CheckoutPage).name = name
 end
 
-And(/^I enter "([^"]*)" in the address field$/) do |arg|
-  @browser.textarea(:id => 'order_address').send_keys(arg)
+When /^I enter "([^"]*)" in the address field$/ do |address|
+  on(CheckoutPage).address = address
 end
 
-And(/^I enter "([^"]*)" in the email field$/) do |arg|
-  @browser.text_field(:id => 'order_email').set(arg)
+When /^I enter "([^"]*)" in the email field$/ do |email|
+  on(CheckoutPage).email = email
 end
 
-And(/^I select "([^"]*)" from the pay with dropdown$/) do |arg|
-  @browser.select_list(:id => 'order_pay_type').select(arg)
+When /^I select "([^"]*)" from the pay with dropdown$/ do |pay_type|
+  on(CheckoutPage).pay_type = pay_type
 end
 
-And(/^I click the Place Order button$/) do
-  @browser.button(:value => 'Place Order').click
+When /^I click the Place Order button$/ do
+  on(CheckoutPage).place_order
 end
 
-Then(/^I should see "([^"]*)"$/) do |arg|
-  fail unless @browser.text.include? arg
-end
+Then /^I should see "([^"]*)"$/ do |expected|
+  expect(@current_page.text).to include expected
 
-
-And(/^I click the Adopt Another Puppy button$/) do
-  @browser.button(:value => 'Adopt Another Puppy').click
-end
-
-And(/^I click the second View Details button$/) do
-  @browser.button(:value => 'View Details', :index => 1).click
 end
 
 Then /^I should see "([^"]*)" as the name for line item (\d+)$/ do |name, line_item|
-  row = (line_item.to_i - 1) * 6
-  expect(@browser.table(:index => 0)[row][1].text).to include name
+  expect(on(ShoppingCartPage).name_for_line_item(line_item)).to include name
 end
+
 When /^I should see "([^"]*)" as the subtotal for line item (\d+)$/ do |subtotal, line_item|
-  row = (line_item.to_i - 1) * 6
-  expect(@browser.table(:index => 0)[row][3].text).to eql subtotal
+  expect(on(ShoppingCartPage).subtotal_for_line_item(line_item)).to eql subtotal
 end
 
 When /^I should see "([^"]*)" as the cart total$/ do |total|
-  expect(@browser.td(:class => 'total_cell').text).to eql total
+  expect(on(ShoppingCartPage).cart_total).to eql total
 end

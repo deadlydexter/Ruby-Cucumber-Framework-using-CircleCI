@@ -8,7 +8,7 @@ Feature: Using the Puppy Adoption Feature
   So puppy can chew my furniture
 
     Given I am on the puppy adoption site
-    When I click the first View Details button
+    When I click the View Details button for "Brook"
     And I click the Adopt Me button
     And I click the Complete the Adoption button
     And I enter "Samy" in the name field
@@ -28,10 +28,10 @@ Feature: Using the Puppy Adoption Feature
   So they can chew all my furniture
 
     Given I am on the puppy adoption site
-    When I click the first View Details button
+    When I click the View Details button for "Brook"
     And I click the Adopt Me button
     And I click the Adopt Another Puppy button
-    And I click the second View Details button
+    When I click the View Details button for "Hanna"
     And I click the Adopt Me button
     And I click the Complete the Adoption button
     And I enter "Samy" in the name field
@@ -48,7 +48,7 @@ Feature: Using the Puppy Adoption Feature
   I want to validate elements on the cart
 
     Given I am on the puppy adoption site
-    When I click the first View Details button
+    When I click the View Details button for "Brook"
     And I click the Adopt Me button
     Then I should see "Brook" as the name for line item 1
     And I should see "$34.95" as the subtotal for line item 1
@@ -63,10 +63,10 @@ Feature: Using the Puppy Adoption Feature
   and complete checkout using different payment options
 
     Given I am on the puppy adoption site
-    When I click the first View Details button
+    When I click the View Details button for "Brook"
     And I click the Adopt Me button
     And I click the Adopt Another Puppy button
-    And I click the second View Details button
+    When I click the View Details button for "Hanna"
     And I click the Adopt Me button
     And I click the Complete the Adoption button
     And I enter "<name>" in the name field

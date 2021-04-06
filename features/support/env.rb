@@ -2,7 +2,8 @@ require 'rspec'
 require 'page-object'
 require 'data_magic'
 require 'require_all'
-require_rel 'pages'
+require_rel 'pages/puppy_adoption_pages'
+require_rel 'helper'
 
 ENV['browser'] = 'chrome'
 
